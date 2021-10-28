@@ -1,0 +1,88 @@
+:root {
+  --ball-size: 75px;
+  --field-size: 1024px;
+  --PI: 3.14;
+}
+
+html {
+  /* height: 100vh; */
+  height: 100vh;
+  /* width: 100%; */
+  background-size: 100% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes ball_appear {
+  0% {
+    left: calc(0px - var(--ball-size));
+    transform: rotate(-90deg);
+  }
+  100% {
+    left: 0px;
+    transform: rotate(0);
+  }
+}
+
+@keyframes ball_move {
+  0% {
+    left: 0;
+    transform: rotate(0);
+  }
+  50% {
+    left: calc(var(--field-size) - var(--ball-size));
+    transform: rotate(calc((1024 / (75 * 3.14)) * 180deg));
+  }
+  100% {
+    left: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes ball_goal {
+  100% {
+    transform: perspective(500px) translate3D(0, -250px, -1000px)
+      rotateZ(-120deg);
+  }
+}
+
+#field {
+  background-image: url('./img/bg_football.jpg');
+  width: var(--field-size);
+  height: 728px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ball {
+  position: absolute;
+  background-image: url('./img/ball.png');
+  background-size: cover;
+  transform: perspective(500px);
+  /* left: 0; */
+}
+
+.ball_here {
+  width: var(--ball-size);
+  height: var(--ball-size);
+  bottom: 10px;
+}
+
+.ball_there {
+  bottom: 80px;
+  width: calc(var(--ball-size) * 0.3);
+  height: calc(var(--ball-size) * 0.3);
+}
+
+.ball_appear {
+  animation: 1s ball_appear;
+}
+
+.ball_move {
+  animation: 5s linear infinite ball_move;
+}
+
+.ball_goal {
+  animation: 2s ball_goal;
+}
