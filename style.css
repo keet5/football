@@ -5,13 +5,56 @@
 }
 
 html {
-  /* height: 100vh; */
   height: 100vh;
-  /* width: 100%; */
-  background-size: 100% auto;
+  /* width: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+main {
+  width: var(--field-size);
+  height: 575px;
+}
+
+.frame {
+  background-image: url('./img/background_0.png');
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  flex-direction: column;
+}
+
+.menu_title {
+  /* height: 100%; */
+  width: 70%;
+}
+
+.menu_digit {
+  font-size: 200px;
+  font-weight: 900;
+  color: white;
+  line-height: 200px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu_button {
+  background: linear-gradient(#2d70e2, #335ca2);
+  border: 1px solid white;
+  border-radius: 45px;
+  padding: 10px 50px;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
 }
 
 @keyframes ball_appear {
@@ -47,10 +90,11 @@ html {
   }
 }
 
-#field {
-  background-image: url('./img/bg_football.jpg');
-  width: var(--field-size);
-  height: 728px;
+.field {
+  background-image: url('./img/background_1.png');
+  background-size: auto 100%;
+  width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -60,10 +104,6 @@ html {
   background-image: url('./img/ball.png');
   background-size: cover;
   transform: perspective(500px);
-  /* left: 0; */
-}
-
-.ball_here {
   width: var(--ball-size);
   height: var(--ball-size);
   bottom: 10px;

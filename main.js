@@ -1,12 +1,27 @@
+const buttonStart = document.getElementsByClassName('menu_button')[0]
+
+buttonStart.addEventListener('click', gameStart)
+
 const field = document.getElementById('field')
 const ball = document.getElementsByClassName('ball')[0]
+const frames = document.getElementsByClassName('frame')
 
-// const field_width = game.getBoundingClientRect().width
-// const ball_diametr = ball.getBoundingClientRect().width
-// const ball_length_radius = Math.PI * ball.getBoundingClientRect().width
-//
-//
+function gameStart() {
+  frames[0].style.display = ''
+  frames[1].style.display = 'block'
+
+  ball.classList.add('ball_appear')
+  ball.addEventListener('animationend', ballAppeared, { once: true })
+}
+
+function ballAppeared() {
+  ball.classList.remove('ball_appear')
+  ball.classList.add('ball_move')
+  document.addEventListener('keydown', ballKick, { once: true })
+}
+
 function ballKick(event) {
+  console.log('kick')
   const bottom = ball.offsetTop - ball.offsetHeight
   const size = ball.offsetWidth
   ball.style.left = ball.offsetLeft + 'px'
@@ -23,22 +38,8 @@ function ballKick(event) {
     }
   )
   ball.classList.remove('ball_move')
-
-  // ball.classList.remove('ball_here')
-  // ball.classList.add('ball_goal')
-  // ball.classList.add('ball_there')
-  // ball.animate([])
-  document.removeEventListener('keydown', ballKick)
-}
-
-function ballAppeared(event) {
-  ball.classList.remove('ball_appear')
-  ball.classList.add('ball_move')
 }
 
 window.onload = function () {
-  ball.classList.add('ball_here')
-  ball.classList.add('ball_appear')
-  ball.addEventListener('animationend', ballAppeared)
-  document.addEventListener('keydown', ballKick)
+  frames[0].style.display = 'block'
 }
