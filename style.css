@@ -84,10 +84,6 @@ main {
 }
 
 @keyframes ball_goal {
-  100% {
-    transform: perspective(500px) translate3D(0, -250px, -1000px)
-      rotateZ(-120deg);
-  }
 }
 
 .field {
