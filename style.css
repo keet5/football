@@ -164,5 +164,13 @@ main {
   background-image: url('img/background_2.jpg');
   background-size: auto 100%;
   background-position: center;
-  display: flex;
+  /* display: flex; */
+}
+
+.win-image {
+  width: 80%;
+}
+
+.win-image img {
+  width: 100%;
 }

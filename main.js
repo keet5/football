@@ -1,9 +1,8 @@
 window.onload = function () {
-  // frames[0].style.display = 'block'
-  // buttonStart.addEventListener('click', gameInitialization)
-
+  frames[0].style.display = 'block'
+  buttonStart.addEventListener('click', gameInitialization)
   // gameInitialization()
-  frames[2].style.display = 'block'
+  // frames[2].style.display = 'block'
 }
 
 // menu
