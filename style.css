@@ -99,7 +99,6 @@ main {
   position: absolute;
   background-image: url('./img/ball.png');
   background-size: cover;
-  transform: perspective(500px);
   width: var(--ball-size);
   height: var(--ball-size);
   bottom: 10px;
@@ -121,4 +120,47 @@ main {
 
 .ball_goal {
   animation: 2s ball_goal;
+}
+
+.attemps {
+  position: absolute;
+  right: 0;
+  /* width: var(--ball-size); */
+}
+
+.attemp {
+  background-image: url('./img/ball.png');
+  background-size: cover;
+  transform: perspective(500px);
+  width: var(--ball-size);
+  height: var(--ball-size);
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.word-slider {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  margin-top: 100px;
+}
+
+.slide {
+  font-size: 100px;
+  line-height: 100px;
+  color: white;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin: auto;
+  width: auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.result {
+  background-image: url('img/background_2.jpg');
+  background-size: cover;
 }
