@@ -1,8 +1,9 @@
 window.onload = function () {
-  frames[0].style.display = 'block'
-  buttonStart.addEventListener('click', gameInitialization)
+  // frames[0].style.display = 'block'
+  // buttonStart.addEventListener('click', gameInitialization)
 
   // gameInitialization()
+  frames[2].style.display = 'block'
 }
 
 // menu
@@ -78,9 +79,7 @@ function perspective(offset) {
 
 function attempCounterDecrease() {
   attempCounter--
-  if (attempCounter) {
-    attemps.children[0].remove()
-  }
+  attemps.children[0].remove()
 }
 
 async function ballKick() {
